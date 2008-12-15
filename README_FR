@@ -1,0 +1,96 @@
+C'est un compilateur et un interpréteur d'un langage basé sur du pascal et du C.
+Le langage en lui même n'est pas très évolué:
+- 3 types (entier, booléen, chaîne de caractères).
+- 2 structures de contrôles (if, while)
+- 3 builtins (read, print, exit)
+- Pas de pointeurs
+- Pas de tableau.
+- Fonctions et fonctions récursives, avec mot clé return débranchant.
+- 5 opérateurs de calcul +,-,/,*,%
+- 6 opérateurs de comparaison ==, !=, >, >=, <, <=
+- Pas de "et" et de "ou". (Pas encore, mais c'est prévu).
+- Les parenthèses sont obligatoires sur des expressions composées. (Temporaire !)
+Ex: 1 + 2 + 3 ne fonctionne pas, il faut écrire: 1 + (2 + 3)
+- Possibilité de faire des variables globales ou locales.
+
+L'intérêt premier de ce projet était de présenter les étapes de compilation d'un code source. C'est pour cela que le langage compilé n'est pas compliqué.
+Chacune des étapes peut être affiché, des options permettant de voir les étapes désirées.
+
+Pour rappeler brièvement les étapes:
+- Lexing (option -L): On récupère tout les tokens d'un fichier. Un token est le plus petit morceau atomique définit dans une grammaire. Par exemple, dans une phrase, un token est un mot. Cette étape vérifie aussi que certains mots impossible ne soit pas présent. Par exemple: "if @ then" génèrera une erreur de lexing, car @ n'est pas un token valide.
+- Parsing (option -P): On vérifie que tout les tokens récupérés sont bien agencé dans l'ordre définis par la grammaire du langage. Cette étape vérifie qu'il n'y ait pas de token mal agencé. Par exemple: "then if while" est une erreur de parsing, puisque cette agencement n'est pas correcte. Créer un AST, réutilisé par toutes les étapes suivantes, à l'aide du design pattern visitor.
+- Binding (option -B): On vérifie que toute les variables et fonctions soient bien définis, et ne soient pas redéfinis. Par exemple: a = 10; levera une erreur de binding puisque "a" n'est pas déclaré. De même: "var a : integer; var a : integer;" provoquera aussi une erreur de binding puisque "a" est déclaré deux fois.
+- Type Checking (option -T): On vérifie que le typage des variables est respecté. Par exemple: "var a : integer;" puis "a = 10;" est correcte, tandis que: "var a : string;" puis "a = 10" est incorrecte.
+
+Une fois toutes ces étapes effectuées, notre code source est considérée comme valide. On peut alors exécuter les étapes suivantes:
+- Exécution (option -X): Exécute le code, et montre le cheminement d'exécution. Option par défaut.
+- Compilation (option -S): Génère de l'assembleur, qu'il ne reste qu'à assembler avec nasm de la manière suivante:
+./minicompil -S prog.mmc > prog.asm
+nasm -o prog.o -f elf -d ELF_TYPE prog.asm
+PUIS
+ld -s --dynamic-linker /lib/ld-linux.so.2 -lc prog.o -o prog
+OU
+./auto_compile.sh prog.asm
+
+Étapes bonus:
+- Conversion en C++ (option -C): Convertit le code en C++. Compilable en tapant:
+./minicompil -C prog.mmc > prog.cc
+PUIS
+g++ -W -Wall prog.cc -o prog
+OU
+./auto_compile.sh prog.cc
+- Debugging (option -D): Fait office de debuggeur. Lance une exécution en montrant l'état de toute les variables, à chaques instructions.
+- All (option -V): Lance et affiche toutes les étapes jusqu'à l'exécution.
+- Grammar generator (option -G): Génère une grammaire valide, aléatoirement.
+- Dotty tree (option -O): Génère une sortie pour dotty de l'AST crée. (Dotty est un logiciel qui permet de dessiner entre autres des graphes et des arbres, cf capture). Une image peut être crée en tapant:
+./minicompil -O prog.mmc > prog.dot
+PUIS
+dot -Tpng prog.dot > prog.png
+OU
+./auto_compile.sh prog.dot
+
+Critiques:
+- L'assembleur généré n'est pas optimisé. Les puristes de l'assembleur trouveront certaines routines écrite de manière peu élégante. De plus je passe beaucoup de chose par la pile.
+- Certains morceaux de code pourraient être optimisés, je vais y travailler.
+- L'AST pourrait être amélioré, par exemple en ne créant qu'un seul noeud lors d'une expression constante. Ex: 1 + (2 + 3), génère beaucoup de noeud, alors qu'un seul noeud contenant 6, serait suffisant.
+- L'overloading, l'inling, les instructions "ou" et "et", la possibilité de découper le code en plusieurs fichiers ne sont pas gérés.
+- Non testé sous windows, mais devrait fonctionner facilement, puisque je me suis imposé de ne pas avoir de dépendance ni sur flex/bison, ni sur boost...
+- L'arborescence n'est pas terrible (tout dans src).
+- L'assembleur généré utilise des fonctions de la libc. J'aurais aimé ne pas avoir de dépendance là dessus.
+Source / Exemple :
+
+Dans le zip ou sur svn : http://svn.assembla.com/svn/cubs
+
+
+Conclusion :
+Documentation:
+- Documentation technique (33mo): http://0217021.free.fr/cubs/refman.pdf
+
+Notes:
+Codé entièrement sous linux avec emacs.
+Compilé avec succès sous g++ 4.2.4.
+Assembleur assemblé sous NASM version 2.06rc2.
+Commentaires au format Doxygen.
+
+Pour compiler: ./configure && make
+Pour compiler en mode debug (-g + -lefence + assert): ./configure --with-debugmax && make
+Pour générer la doc: make doc
+Pour lancer les tests: make check
+
+La dernière version est librement "checkoutable" ici: http://svn.assembla.com/svn/cubs
+Sous unix: svn co http://svn.assembla.com/svn/cubs
+Sous windows, il y a "tortoise svn" qui permet de le faire.
+
+Bibliographie:
+- Dr Paul Carter: http://www.drpaulcarter.com/pcasm/, à qui j'ai emprunté la seule partie de ce projet que je n'ai pas faite seul: les routines "read_int", "read_char", "print_int" et print_string".
+- Mes cours sur les langages rationnelles et la compilation que je ne peux pas diffuser ici.
+
+Bugs:
+- Merci de me contacter si vous trouvez un bug: cptpingu AT gmail DOT com
+- Toutes les remarques constructives sont les bienvenue.
+
+Binaires:
+Si vous ne voulez pas compiler le projet, j'ai déjà crée les binaires ici:
+- Linux: http://0217021.free.fr/cubs/cubs
+- Windows: http://0217021.free.fr/cubs/cubs.exe
+

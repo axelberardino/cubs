@@ -1,0 +1,551 @@
+main.o: main.cc Utils.hh Utils.hxx Compiler.hh Error.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Parser.hh NodeProgram.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeType.hh NodeFunctions.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeIdFunc.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh CreateAST.hh \
+  CreateAST.hxx Binder.hh BinderVisitor.hh BaseVisitor.hh BaseVisitor.hxx \
+  Scope.hh Scope.hxx TypeChecker.hh TypeCheckerVisitor.hh Execution.hh \
+  ExecutionVisitor.hh Variable.hh Compiler.hxx
+Configuration.o: Configuration.cc Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx
+Compiler.o: Compiler.cc Compiler.hh Error.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Parser.hh NodeProgram.hh Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeIds.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeType.hh NodeFunctions.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh NodeIdFunc.hh \
+  NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh NodeAffect.hh \
+  NodeExpression.hh NodeOperation.hh NodeFactor.hh NodeCallFunc.hh \
+  NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh \
+  NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh CreateAST.hh CreateAST.hxx Binder.hh BinderVisitor.hh \
+  BaseVisitor.hh BaseVisitor.hxx Scope.hh Scope.hxx TypeChecker.hh \
+  TypeCheckerVisitor.hh Execution.hh ExecutionVisitor.hh Variable.hh \
+  Compiler.hxx PrettyPrinterVisitor.hh GenerateAST.hh GenerateAST.hxx \
+  BindingPrinterVisitor.hh TypeCheckingPrinterVisitor.hh \
+  GenerateDotASTVisitor.hh GenerateDotASTVisitor.hxx \
+  ConvertToCppVisitor.hh ASMGeneratorVisitor.hh ASMGeneratorVisitor.hxx
+Lexer.o: Lexer.cc Lexer.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Utils.hh Utils.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh
+Utils.o: Utils.cc Utils.hh Utils.hxx Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx
+Error.o: Error.cc Error.hh
+ErrorHandler.o: ErrorHandler.cc ErrorHandler.hh Error.hh Utils.hh \
+  Utils.hxx
+Parser.o: Parser.cc Parser.hh Error.hh ErrorHandler.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Utils.hh \
+  Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx NodeProgram.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeType.hh NodeFunctions.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeIdFunc.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh CreateAST.hh \
+  CreateAST.hxx
+Binder.o: Binder.cc Binder.hh Error.hh ErrorHandler.hh NodeProgram.hh \
+  Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeType.hh NodeFunctions.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeIdFunc.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh BinderVisitor.hh \
+  BaseVisitor.hh BaseVisitor.hxx Scope.hh Scope.hxx
+TypeChecker.o: TypeChecker.cc TypeChecker.hh Error.hh ErrorHandler.hh \
+  NodeProgram.hh Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Utils.hh \
+  Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeType.hh NodeFunctions.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeIdFunc.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh \
+  TypeCheckerVisitor.hh BaseVisitor.hh BaseVisitor.hxx
+Execution.o: Execution.cc Execution.hh Error.hh ErrorHandler.hh \
+  NodeProgram.hh Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Utils.hh \
+  Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeType.hh NodeFunctions.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeIdFunc.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh ExecutionVisitor.hh \
+  BaseVisitor.hh BaseVisitor.hxx Variable.hh Scope.hh Scope.hxx
+Symbol.o: Symbol.cc Symbol.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx Utils.hh Utils.hxx
+Variable.o: Variable.cc Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Variable.hh Utils.hh Utils.hxx
+SharedString.o: SharedString.cc SharedString.hh Flyweight.hh \
+  Flyweight.hxx SharedString.hxx
+Scope.o: Scope.cc
+CreateAST.o: CreateAST.cc CreateAST.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Error.hh NodeIds.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeProgram.hh NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh NodeIdFunc.hh \
+  NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh NodeAffect.hh \
+  NodeExpression.hh NodeOperation.hh NodeFactor.hh NodeCallFunc.hh \
+  NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh \
+  NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh CreateAST.hxx
+GenerateAST.o: GenerateAST.cc GenerateAST.hh IVisitor.hh Traits.hh \
+  NodeIds.hh Node.hh IVisitable.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeProgram.hh NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh NodeIdFunc.hh \
+  NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh NodeAffect.hh \
+  NodeExpression.hh NodeOperation.hh NodeFactor.hh NodeCallFunc.hh \
+  NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh \
+  NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh GenerateAST.hxx
+BaseVisitor.o: BaseVisitor.cc
+ConvertToCppVisitor.o: ConvertToCppVisitor.cc ConvertToCppVisitor.hh \
+  PrettyPrinterVisitor.hh BaseVisitor.hh IVisitor.hh Traits.hh \
+  BaseVisitor.hxx NodeIds.hh Node.hh IVisitable.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Utils.hh \
+  Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh
+PrettyPrinterVisitor.o: PrettyPrinterVisitor.cc PrettyPrinterVisitor.hh \
+  BaseVisitor.hh IVisitor.hh Traits.hh BaseVisitor.hxx NodeIds.hh Node.hh \
+  IVisitable.hh Lexer.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Utils.hh Utils.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh NodeId.hh TypedNode.hh TypedNode.hxx NodeProgram.hh \
+  NodeDeclarations.hh NodeDeclaration.hh NodeDeclarationBody.hh \
+  NodeType.hh NodeFunctions.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeIdFunc.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh
+GenerateDotASTVisitor.o: GenerateDotASTVisitor.cc \
+  GenerateDotASTVisitor.hh BaseVisitor.hh IVisitor.hh Traits.hh \
+  BaseVisitor.hxx NodeIds.hh Node.hh IVisitable.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Utils.hh \
+  Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh GenerateDotASTVisitor.hxx
+BinderVisitor.o: BinderVisitor.cc BinderVisitor.hh BaseVisitor.hh \
+  IVisitor.hh Traits.hh BaseVisitor.hxx NodeIds.hh Node.hh IVisitable.hh \
+  Lexer.hh Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx \
+  Utils.hh Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh Scope.hh Scope.hxx
+TypeCheckerVisitor.o: TypeCheckerVisitor.cc TypeCheckerVisitor.hh \
+  Utils.hh Utils.hxx BaseVisitor.hh IVisitor.hh Traits.hh BaseVisitor.hxx \
+  NodeIds.hh Node.hh IVisitable.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh Flyweight.hh \
+  Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh \
+  NodeId.hh TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh
+ExecutionVisitor.o: ExecutionVisitor.cc ExecutionVisitor.hh Utils.hh \
+  Utils.hxx BaseVisitor.hh IVisitor.hh Traits.hh BaseVisitor.hxx \
+  NodeIds.hh Node.hh IVisitable.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh Flyweight.hh \
+  Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh \
+  NodeId.hh TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh Variable.hh Scope.hh Scope.hxx
+ASMGeneratorVisitor.o: ASMGeneratorVisitor.cc ASMGeneratorVisitor.hh \
+  Scope.hh Scope.hxx Traits.hh PrettyPrinterVisitor.hh BaseVisitor.hh \
+  IVisitor.hh BaseVisitor.hxx NodeIds.hh Node.hh IVisitable.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Utils.hh \
+  Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh ASMGeneratorVisitor.hxx
+BindingPrinterVisitor.o: BindingPrinterVisitor.cc \
+  BindingPrinterVisitor.hh PrettyPrinterVisitor.hh BaseVisitor.hh \
+  IVisitor.hh Traits.hh BaseVisitor.hxx NodeIds.hh Node.hh IVisitable.hh \
+  Lexer.hh Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx \
+  Utils.hh Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh
+TypeCheckingPrinterVisitor.o: TypeCheckingPrinterVisitor.cc \
+  TypeCheckingPrinterVisitor.hh PrettyPrinterVisitor.hh BaseVisitor.hh \
+  IVisitor.hh Traits.hh BaseVisitor.hxx NodeIds.hh Node.hh IVisitable.hh \
+  Lexer.hh Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx \
+  Utils.hh Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeProgram.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeDeclarationBody.hh NodeType.hh NodeFunctions.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeIdFunc.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeCallFunc.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh
+TypedNode.o: TypedNode.cc TypedNode.hh Utils.hh Utils.hxx Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh TypedNode.hxx
+Node.o: Node.cc Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Utils.hh \
+  Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh
+NodeId.o: NodeId.cc NodeId.hh TypedNode.hh Utils.hh Utils.hxx Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh TypedNode.hxx
+NodeIdFunc.o: NodeIdFunc.cc NodeIdFunc.hh TypedNode.hh Utils.hh Utils.hxx \
+  Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh TypedNode.hxx NodeFunction.hh NodeId.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeDeclarationBody.hh NodeIds.hh \
+  NodeType.hh NodeDeclarations.hh NodeDeclaration.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh
+NodeType.o: NodeType.cc NodeType.hh TypedNode.hh Utils.hh Utils.hxx \
+  Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh TypedNode.hxx
+NodeNumber.o: NodeNumber.cc NodeNumber.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh TypedNode.hh TypedNode.hxx
+NodeStringExpr.o: NodeStringExpr.cc NodeStringExpr.hh Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Error.hh TypedNode.hh TypedNode.hxx
+NodeBoolean.o: NodeBoolean.cc NodeBoolean.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh TypedNode.hh TypedNode.hxx
+NodeIf.o: NodeIf.cc NodeIf.hh Node.hh IVisitable.hh IVisitor.hh Traits.hh \
+  Lexer.hh Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx \
+  Utils.hh Utils.hxx Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx \
+  SharedString.hxx Symbol.hxx ErrorHandler.hh Error.hh \
+  NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeExpression.hh NodeOperation.hh \
+  NodeFactor.hh NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh
+NodeWhile.o: NodeWhile.cc NodeWhile.hh Node.hh IVisitable.hh IVisitor.hh \
+  Traits.hh Lexer.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Utils.hh Utils.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh NodeAffect.hh \
+  NodeId.hh TypedNode.hh TypedNode.hxx NodeExpression.hh NodeOperation.hh \
+  NodeFactor.hh NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh
+NodeOperation.o: NodeOperation.cc NodeOperation.hh TypedNode.hh Utils.hh \
+  Utils.hxx Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh TypedNode.hxx NodeFactor.hh NodeId.hh \
+  NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeDeclarationBody.hh NodeIds.hh \
+  NodeType.hh NodeDeclarations.hh NodeDeclaration.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh NodeIf.hh \
+  NodeExpressions.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh
+NodeProgram.o: NodeProgram.cc NodeProgram.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh NodeDeclarations.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeType.hh NodeFunctions.hh NodeFunction.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeIdFunc.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh
+NodeCallFunc.o: NodeCallFunc.cc NodeCallFunc.hh TypedNode.hh Utils.hh \
+  Utils.hxx Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh TypedNode.hxx NodeIdFunc.hh NodeFunction.hh \
+  NodeId.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh \
+  NodeExpressions.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh
+NodeCompoundInstr.o: NodeCompoundInstr.cc NodeCompoundInstr.hh Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Error.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeId.hh TypedNode.hh TypedNode.hxx NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeIdFunc.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh
+NodeExpressions.o: NodeExpressions.cc NodeExpressions.hh Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Error.hh NodeExpression.hh TypedNode.hh \
+  TypedNode.hxx NodeOperation.hh NodeFactor.hh NodeId.hh NodeCallFunc.hh \
+  NodeIdFunc.hh NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh \
+  NodeArgument.hh NodeDeclarationBody.hh NodeIds.hh NodeType.hh \
+  NodeDeclarations.hh NodeDeclaration.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh NodeNumber.hh \
+  NodeStringExpr.hh NodeBoolean.hh
+NodeExpression.o: NodeExpression.cc NodeExpression.hh TypedNode.hh \
+  Utils.hh Utils.hxx Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh TypedNode.hxx NodeOperation.hh NodeFactor.hh \
+  NodeId.hh NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeIf.hh NodeExpressions.hh NodeWhile.hh NodeReturn.hh \
+  NodeExit.hh NodePrint.hh NodeRead.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh
+NodeDeclarations.o: NodeDeclarations.cc NodeDeclarations.hh Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Error.hh NodeDeclaration.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeType.hh
+NodeDeclaration.o: NodeDeclaration.cc NodeDeclaration.hh Node.hh \
+  IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Error.hh NodeDeclarationBody.hh NodeIds.hh \
+  NodeId.hh TypedNode.hh TypedNode.hxx NodeType.hh
+NodeDeclarationBody.o: NodeDeclarationBody.cc NodeDeclarationBody.hh \
+  Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Utils.hh Utils.hxx \
+  Symbol.hh SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx \
+  Symbol.hxx ErrorHandler.hh Error.hh NodeIds.hh NodeId.hh TypedNode.hh \
+  TypedNode.hxx NodeType.hh
+NodeIds.o: NodeIds.cc NodeIds.hh Node.hh IVisitable.hh IVisitor.hh \
+  Traits.hh Lexer.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Utils.hh Utils.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh NodeId.hh TypedNode.hh TypedNode.hxx
+NodeInstrs.o: NodeInstrs.cc NodeInstrs.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh NodeInstr.hh NodeAffect.hh NodeId.hh \
+  TypedNode.hh TypedNode.hxx NodeExpression.hh NodeOperation.hh \
+  NodeFactor.hh NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeCompoundInstr.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh
+NodeInstr.o: NodeInstr.cc NodeInstr.hh Node.hh IVisitable.hh IVisitor.hh \
+  Traits.hh Lexer.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Utils.hh Utils.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh NodeAffect.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeExpression.hh NodeOperation.hh NodeFactor.hh NodeCallFunc.hh \
+  NodeIdFunc.hh NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh \
+  NodeArgument.hh NodeDeclarationBody.hh NodeIds.hh NodeType.hh \
+  NodeDeclarations.hh NodeDeclaration.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh \
+  NodeBoolean.hh NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh
+NodeAffect.o: NodeAffect.cc NodeAffect.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh NodeId.hh TypedNode.hh TypedNode.hxx \
+  NodeExpression.hh NodeOperation.hh NodeFactor.hh NodeCallFunc.hh \
+  NodeIdFunc.hh NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh \
+  NodeArgument.hh NodeDeclarationBody.hh NodeIds.hh NodeType.hh \
+  NodeDeclarations.hh NodeDeclaration.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeIf.hh NodeExpressions.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh NodeNumber.hh \
+  NodeStringExpr.hh NodeBoolean.hh
+NodeReturn.o: NodeReturn.cc NodeReturn.hh TypedNode.hh Utils.hh Utils.hxx \
+  Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh TypedNode.hxx NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeId.hh NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeIf.hh NodeExpressions.hh NodeWhile.hh NodeExit.hh \
+  NodePrint.hh NodeRead.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh
+NodeExit.o: NodeExit.cc NodeExit.hh TypedNode.hh Utils.hh Utils.hxx \
+  Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh TypedNode.hxx NodeExpression.hh NodeOperation.hh NodeFactor.hh \
+  NodeId.hh NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeIf.hh NodeExpressions.hh NodeWhile.hh NodeReturn.hh \
+  NodePrint.hh NodeRead.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh
+NodePrint.o: NodePrint.cc NodePrint.hh Node.hh IVisitable.hh IVisitor.hh \
+  Traits.hh Lexer.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Utils.hh Utils.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh NodeExpression.hh TypedNode.hh TypedNode.hxx NodeOperation.hh \
+  NodeFactor.hh NodeId.hh NodeCallFunc.hh NodeIdFunc.hh NodeFunction.hh \
+  NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeIf.hh NodeExpressions.hh NodeWhile.hh NodeReturn.hh \
+  NodeExit.hh NodeRead.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh
+NodeRead.o: NodeRead.cc NodeRead.hh Node.hh IVisitable.hh IVisitor.hh \
+  Traits.hh Lexer.hh Configuration.hh Singleton.hh Singleton.hxx \
+  Configuration.hxx Utils.hh Utils.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh NodeId.hh TypedNode.hh TypedNode.hxx
+NodeFactor.o: NodeFactor.cc NodeFactor.hh TypedNode.hh Utils.hh Utils.hxx \
+  Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh Configuration.hh \
+  Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh SharedString.hh \
+  Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx ErrorHandler.hh \
+  Error.hh TypedNode.hxx NodeId.hh NodeCallFunc.hh NodeIdFunc.hh \
+  NodeFunction.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeDeclarations.hh \
+  NodeDeclaration.hh NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh \
+  NodeAffect.hh NodeExpression.hh NodeOperation.hh NodeIf.hh \
+  NodeExpressions.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh
+NodeFunctions.o: NodeFunctions.cc NodeFunctions.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh NodeFunction.hh TypedNode.hh TypedNode.hxx \
+  NodeId.hh NodeHeaderFunc.hh NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeType.hh NodeIdFunc.hh \
+  NodeDeclarations.hh NodeDeclaration.hh NodeCompoundInstr.hh \
+  NodeInstrs.hh NodeInstr.hh NodeAffect.hh NodeExpression.hh \
+  NodeOperation.hh NodeFactor.hh NodeCallFunc.hh NodeExpressions.hh \
+  NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh NodeIf.hh NodeWhile.hh \
+  NodeReturn.hh NodeExit.hh NodePrint.hh NodeRead.hh
+NodeFunction.o: NodeFunction.cc NodeFunction.hh TypedNode.hh Utils.hh \
+  Utils.hxx Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh TypedNode.hxx NodeId.hh NodeHeaderFunc.hh \
+  NodeArguments.hh NodeArgument.hh NodeDeclarationBody.hh NodeIds.hh \
+  NodeType.hh NodeIdFunc.hh NodeDeclarations.hh NodeDeclaration.hh \
+  NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh NodeAffect.hh \
+  NodeExpression.hh NodeOperation.hh NodeFactor.hh NodeCallFunc.hh \
+  NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh \
+  NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh
+NodeHeaderFunc.o: NodeHeaderFunc.cc NodeHeaderFunc.hh TypedNode.hh \
+  Utils.hh Utils.hxx Node.hh IVisitable.hh IVisitor.hh Traits.hh Lexer.hh \
+  Configuration.hh Singleton.hh Singleton.hxx Configuration.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh TypedNode.hxx NodeArguments.hh NodeArgument.hh \
+  NodeDeclarationBody.hh NodeIds.hh NodeId.hh NodeType.hh NodeIdFunc.hh \
+  NodeFunction.hh NodeDeclarations.hh NodeDeclaration.hh \
+  NodeCompoundInstr.hh NodeInstrs.hh NodeInstr.hh NodeAffect.hh \
+  NodeExpression.hh NodeOperation.hh NodeFactor.hh NodeCallFunc.hh \
+  NodeExpressions.hh NodeNumber.hh NodeStringExpr.hh NodeBoolean.hh \
+  NodeIf.hh NodeWhile.hh NodeReturn.hh NodeExit.hh NodePrint.hh \
+  NodeRead.hh
+NodeArguments.o: NodeArguments.cc NodeArguments.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh NodeArgument.hh NodeDeclarationBody.hh \
+  NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx NodeType.hh
+NodeArgument.o: NodeArgument.cc NodeArgument.hh Node.hh IVisitable.hh \
+  IVisitor.hh Traits.hh Lexer.hh Configuration.hh Singleton.hh \
+  Singleton.hxx Configuration.hxx Utils.hh Utils.hxx Symbol.hh \
+  SharedString.hh Flyweight.hh Flyweight.hxx SharedString.hxx Symbol.hxx \
+  ErrorHandler.hh Error.hh NodeArguments.hh NodeDeclarationBody.hh \
+  NodeIds.hh NodeId.hh TypedNode.hh TypedNode.hxx NodeType.hh
