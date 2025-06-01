@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BIN="./minicompil" # To change
+BIN="./cubs"
 WHITE=$'\E[m'
 RED=$'\E[01;31m'
 GREEN=$'\E[01;32m'
@@ -9,7 +9,7 @@ YELLOW=$'\E[01;33m'
 ORANGE=$'\E[01;30m'
 SEP="${PURPLE}|${WHITE}"
 
-dir=`dirname $0`
+dir=$(dirname "$0")
 my_output="$dir/my.txt"
 ref_output="$dir/ref.txt"
 glob_ret=0
@@ -18,13 +18,13 @@ glob_ret=0
 function get_output()
 {
     echo -n > $my_output
-    local nb=`cat $1 | wc -l`
+    local nb=$(cat $1 | wc -l)
     nb=$(($nb - 4))
     local activ=1
-    local delim=`cat $1 | head -n 3 | tail -n 1`
-    for i in `seq 4 $nb`; do
+    local delim=$(cat $1 | head -n 3 | tail -n 1)
+    for i in $(seq 4 $nb); do
 	if [ $activ -eq 1 ]; then
-	    local line=`cat $1 | head -n $i | tail -n 1`
+	    local line=$(cat $1 | head -n $i | tail -n 1)
 	    if [ "$line" == "$delim" ]; then
 		activ=0
 	    else
@@ -37,16 +37,16 @@ function get_output()
 
 function test_file()
 {
-    local header=`cat $1 | head -n 1`
-    if [ "$header" != "#!/bin/cub" ]; then
+    local header=$(cat $1 | head -n 1)
+    if [ "$header" != "#!/bin/cubs" ]; then
 	return 255
     fi
-    local attempted=`cat $1 | head -n 2 | tail -n 1`
+    local attempted=$(cat $1 | head -n 2 | tail -n 1)
     if [ "$attempted" == "#skip" ]; then
 	return 254
     fi
     attempted=${attempted###}
-    `$BIN $1 2> /dev/null > $ref_output`
+    $BIN $1 2> /dev/null > $ref_output
     local ret=$?
     glob_ret=$ret
     glob_attempted=$attempted
@@ -123,8 +123,8 @@ function apply_to_all_files()
     echo -n "$SEP ${PURPLE}File${WHITE}"
     echo
     echo "${PURPLE}-----------------------------------${WHITE}"
-    for i in `ls $1/$2/*.mmc`; do
-	local file=`basename $i`
+    for i in $(ls $1/$2/*.mmc); do
+	local file=$(basename $i)
 	glob_ret=0
 	glob_attempted=0
 	apply_test_to_file $i $file
@@ -133,7 +133,7 @@ function apply_to_all_files()
 
 function main()
 {
-    for i in `ls "$dir"`; do
+    for i in $(ls "$dir"); do
 	if [ -d $dir/$i ]; then
 	    apply_to_all_files $dir $i
 	fi

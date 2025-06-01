@@ -1,4 +1,4 @@
-#!/bin/cub
+#!/bin/cubs
 #skip
 var i : integer;
 var s : string;

@@ -1,0 +1,15 @@
+#!/bin/cubs
+
+var a : integer;
+
+function double(i: integer) : integer;
+begin
+  return i * i;
+end
+
+begin
+  a = 5;
+  a = double(a);
+  print(a);
+  print("\n");
+end

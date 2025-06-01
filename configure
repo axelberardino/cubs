@@ -9,7 +9,7 @@
 ##
 
 LOGIN=berard_a
-PROJ=minicompil
+PROJ=cubs
 EXE=$PROJ
 
 flag_debug=0

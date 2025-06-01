@@ -581,15 +581,12 @@ namespace MiniCompiler
     AST::NodeStringExpr* stringExpr = node->getStringExpr();
     AST::NodeBoolean* boolExpr = node->getBool();
     AST::NodeExpression* expression = node->getExpression();
-    unsigned int nb = 0;
-
-    nb += id ? 1 : 0;
-    nb += callFunc ? 1 : 0;
-    nb += number ? 1 : 0;
-    nb += stringExpr ? 1 : 0;
-    nb += boolExpr ? 1 : 0;
-    nb += expression ? 1 : 0;
-    assert(nb == 1);
+    assert((id ? 1 : 0 +;
+            callFunc ? 1 : 0 +;
+            number ? 1 : 0 +;
+            stringExpr ? 1 : 0 +;
+            boolExpr ? 1 : 0 +;
+            expression ? 1 : 0) == 1);
 
     if (id)
     {

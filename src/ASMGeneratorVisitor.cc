@@ -592,18 +592,15 @@ namespace MiniCompiler
     const AST::NodeExit* nExit = node->getExit();
     const AST::NodePrint* nPrint = node->getPrint();
     const AST::NodeRead* nRead = node->getRead();
-    unsigned int nb = 0;
-
-    nb += affect ? 1 : 0;
-    nb += callFunc ? 1 : 0;
-    nb += compoundInstr ? 1 : 0;
-    nb += nIf ? 1 : 0;
-    nb += nWhile ? 1 : 0;
-    nb += nReturn ? 1 : 0;
-    nb += nExit ? 1 : 0;
-    nb += nPrint ? 1 : 0;
-    nb += nRead ? 1 : 0;
-    assert(nb == 1);
+    assert((affect ? 1 : 0 +
+            callFunc ? 1 : 0 +
+            compoundInstr ? 1 : 0 +
+            nIf ? 1 : 0 +
+            nWhile ? 1 : 0 +
+            nReturn ? 1 : 0 +
+            nExit ? 1 : 0 +
+            nPrint ? 1 : 0 +
+            nRead ? 1 : 0) == 1);
 
     if (compoundInstr)
     {
@@ -663,15 +660,12 @@ namespace MiniCompiler
     const AST::NodeStringExpr* stringExpr = node->getStringExpr();
     const AST::NodeBoolean* boolExpr = node->getBool();
     const AST::NodeExpression* expression = node->getExpression();
-    unsigned int nb = 0;
-
-    nb += id ? 1 : 0;
-    nb += callFunc ? 1 : 0;
-    nb += number ? 1 : 0;
-    nb += stringExpr ? 1 : 0;
-    nb += boolExpr ? 1 : 0;
-    nb += expression ? 1 : 0;
-    assert(nb == 1);
+    assert((id ? 1 : 0 +
+            callFunc ? 1 : 0 +
+            number ? 1 : 0 +
+            stringExpr ? 1 : 0 +
+            boolExpr ? 1 : 0 +
+            expression ? 1 : 0) == 1);
 
     if (callFunc)
     {
